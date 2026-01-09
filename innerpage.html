@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnerPage</title>
+    <link rel="stylesheet" href="css/innerpage-style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="css/innerpage-style.css">
+     -->
+</head>
+
+<body>
+    <div class="main-container">
+        <nav class="navbar navbar-light bg-white py-3 px-4">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
+
+                <div class="d-flex align-items-center gap-3">
+                    <img src="./images/menu-bar.svg" alt="menu">
+
+                    <img src="./images/logo.svg" width="140" alt="logo">
+
+                    <div class="d-flex align-items-center ms-4">
+                        <img src="./images/search-icon.svg" width="20" alt="search">
+                        <span class="ms-2 text-muted">Search</span>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center gap-4">
+                    <img src="./images/notification-icon.svg" width="22" alt="notification">
+
+                    <div class="d-flex align-items-center gap-2">
+                        <img src="./images/profile.png" width="32" height="32" class="rounded-circle" alt="profile">
+                        <span class="fw-medium">John Doe</span>
+                        <img src="./images/downward-arrow.svg" width="14" alt="arrow">
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+
+
+
+
+
+        <div class="container-fluid d-flex flex-row bodyContainer">
+            <div class="sidebar vh-100" width="242">
+                <div class="d-flex flex-row justify-content-even align-items-center dashboard">
+                    <img src="images/dashboard-default.svg" width="15" height="15" alt="Dashboard Icon">
+                    <a href="#" class="m-3">Dashboard</a>
+                </div>
+
+
+                <div class="d-flex flex-row justify-content-between align-items-center analysisActive">
+                    <button class="btn" width="183" height="43">
+                        <img src="images/graph-active.svg" width="19" height="18" alt="Analysis Icon">
+                        <a href="#" class="m-3">Analysis</a>
+                    </button>
+                </div>
+
+                <div class="d-flex flex-row justify-content-left align-items-center inbox">
+                    <img src="images/inbox-default.svg" width="15" height="15" alt="Inbox Icon">
+                    <a href="#" class="m-3">Inbox</a>
+                </div>
+
+                <div class="d-flex flex-row justify-content-left align-items-center dashboard">
+                    <img src="images/clock-default.svg" width="15" height="15" alt="History Icon">
+                    <a href="#" class="m-3">History</a>
+                </div>
+
+
+                <div class="d-flex flex-row justify-content-even align-items-center users">
+                    <img src="images/user-default.svg" width="15" height="15" alt="Users Icon">
+                    <a href="#" class="m-3">Users</a>
+                </div>
+
+                <div class="d-flex flex-row justify-content-between align-items-center maintenance">
+                    <img src="images/maintenance-default.svg" width="13" height="18" alt="Maintenance Icon">
+                    <a href="#" class="m-3">Maintenance</a>
+                </div>
+
+                <div class="d-flex flex-row justify-content-even align-items-center setting">
+                    <img src="images/setting-default.svg" width="17" height="17" alt="setting Icon">
+                    <a href="#" class="m-3">Setting</a>
+                </div>
+            </div>
+
+            <div class="main" class="vh-100" width="1318">
+                <div class="d-flex flex-row   align-items-center formTitle">
+                    <h2>Analysis</h2>
+                </div>
+
+                <div class="container-fluid mt-4 formContainer">
+                    <form>
+                        <fieldset>
+                            <legend>
+                                <p id="one">One Column</p>
+                            </legend>
+                            <div class="mb-3">
+                                <input type="text" id="name" class="form-control" placeholder="Name">
+                            </div>
+                            <div class="mb-3">
+                                <select class="form-select" aria-label="Default dropdown example">
+                                    <option selected>Dropdown</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+
+                                <textarea class="form-control" id="Textarea1" placeholder="Multiple Lines"></textarea>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>
+                                <p id="two0">Two Column</p>
+                            </legend>
+
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <input type="text" id="name" class="form-control" placeholder="Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="form-group">
+                                            <div class="mb-3">
+                                                <label class="form-label" class="usernameLabel">
+                                                    <span>username</span>
+                                                    <input type="text" id="username" class="form-control"
+                                                        placeholder="johndoe">
+
+                                                </label>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <input type="password" id="password" class="form-control"
+                                                placeholder="password">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <select class="form-select" aria-label="Default dropdown example">
+                                                <option selected>Dropdown</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+
+                        </fieldset>
+
+
+                        <fieldset>
+                            <legend>
+                                <p id="three">Three Column</p>
+                            </legend>
+
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="mb-3">
+                                            <input type="text" id="focus" class="form-control" autofocus>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+
+
+                                        <div class="mb-3">
+                                            <input type="password" class="form-control" id="PasswordSecret"
+                                                placeholder="Enter your password" value="Top secret">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="mb-3">
+                                            <input type="text" id="disabled" class="form-control" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </form>
+
+
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>
+                                <p id="four">Four Column</p>
+                            </legend>
+
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control is-invalid" id="designation"
+                                            aria-describedby="validationFeedback" placeholder="UI Designer">
+                                        <div id="validationFeedbackDesignation" class="invalid-feedback">
+                                            Enter Valid Data
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="mb-2">
+                                            <input type="text" class="form-control" id="fullName" placeholder="name">
+                                        </div>
+                                        <div id="fullNameInstruction" class="form-Text">Enter Your Full Name as per id
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="mb-3">
+                                            <input type="text" id="usernameFour" class="form-control"
+                                                placeholder="johndoe">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="mb-3">
+                                            <select class="form-select" aria-label="Default dropdown example">
+                                                <option selected>Select</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </fieldset>
+
+
+                        <fieldset class="mt-4">
+                            <legend>
+                                <p id="otherElements">Other Design Elements</p>
+                            </legend>
+                            <div class="d-flex flex-column mb-3">
+                                <label for="fileUpload" class="form-label fileLabel">FileUpload</label>
+                                <input type="file" class="form-control-file " style="display: none;" id="fileUpload">
+                                <div class="d-flex flex-row align-items-center">
+                                    <button
+                                        class=" d-flex flex-row justify-content-center align-items-center btn-outline-secondary"
+                                        type="button" id="uploadButton">
+                                        <div class="me-2"><img src="images/cloud-upload-icon.svg" alt="upload"></div>
+                                        Upload
+                                    </button>
+                                    <span id="fileName" class="ms-3 mt-1">No item selected</span>
+                                </div>
+                                          
+                                  <span class="mt-3 radBtn">Radio Button</span>
+                                <div class=" d-flex flex-row align-items-center mt-3 mb-3">
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" >Option 1
+                                        <label class="form-check-label" for="radio1"></label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2" checked>Option 2
+                                        <label class="form-check-label" for="radio2"></label>
+                                      </div>
+                                      
+                                </div>
+
+                                <span class="mt-3 checkBox">CheckBox</span>
+                                <div class=" d-flex flex-row align-items-center mt-3 mb-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="optCheck" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                          Option1
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="optCheck" id="flexCheckChecked" checked>
+                                        <label class="form-check-label" for="flexCheckChecked">
+                                          Option2
+                                        </label>
+                                      </div>
+                                      
+                                </div>
+
+                                <span class="mt-3 snackBar">SnackBar</span>
+                                  
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        
+                                    </div>
+                                    <div class="col-md-6">
+                                        
+                                    </div>
+
+                                    
+                                </div>
+                                
+
+                               
+                               
+                            </div>
+                        </fieldset>
+                    </form>
+
+
+
+
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+    </div>
+</body>
+
+</html>
