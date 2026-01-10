@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dashboard-page">
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    
+    <div class="main-container">
+        <!-- Responsive Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 px-4 fixed-top shadow-sm">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-3">
+                    <!-- Mobile Menu Toggle -->
+                    <button class="navbar-toggler d-lg-none" type="button" id="mobileMenuToggle">
+                        <img src="./images/menu-bar.svg" alt="menu" width="20">
+                    </button>
+                    
+                    <!-- Desktop Menu -->
+                    <img src="./images/menu-bar.svg" alt="menu" class="d-none d-lg-block" width="18">
+                    
+                    <!-- Logo -->
+                    <img src="./images/logo.svg" width="140" alt="logo" class="navbar-brand">
+
+                    <!-- Search - Hidden on mobile -->
+                    <div class="d-none d-md-flex desktop-search">
+                        <img src="./images/search-icon.svg" width="16" alt="search" class="desktop-search-icon">
+                        <input type="text" placeholder="Search..." autocomplete="off">
+                    </div>
+                </div>
+
+                <!-- Right side items -->
+                <div class="d-flex align-items-center gap-2 gap-md-4">
+                    <!-- Mobile Search Icon -->
+                    <button class="btn btn-link d-md-none p-0" id="mobileSearchToggle">
+                        <img src="./images/search-icon.svg" width="20" alt="search">
+                    </button>
+                    
+                    <img src="./images/notification-icon.svg" width="22" alt="notification">
+
+                    <div class="d-flex align-items-center gap-2">
+                        <img src="./images/profile.png" width="32" height="32" class="rounded-circle" alt="profile">
+                        <span class="fw-medium d-none d-sm-block">John Doe</span>
+                        <img src="./images/downward-arrow.svg" width="14" alt="arrow" class="d-none d-sm-block">
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Search Bar -->
+        <div class="mobile-search-bar" id="mobileSearchBar">
+            <div class="container-fluid py-2">
+                <div class="input-group">
+                    <span class="input-group-text bg-transparent border-0">
+                        <img src="./images/search-icon.svg" width="16" alt="search">
+                    </span>
+                    <input type="text" class="form-control border-0" placeholder="Search...">
+                    <button class="btn btn-link" id="closeMobileSearch">
+                        <span>&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid d-flex flex-row bodyContainer">
+            <!-- Sidebar -->
+            <div class="sidebar" id="sidebar">
+                <!-- Close button for mobile -->
+                <div class="sidebar-header d-lg-none">
+                    <button class="btn btn-link sidebar-close" id="sidebarClose">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                
+                <!-- Navigation Items -->
+                <div class="sidebar-nav">
+                    <div class="nav-item active">
+                        <img src="images/dashboard-default.svg" width="15" height="15" alt="Dashboard Icon">
+                        <a href="#" class="nav-link">Dashboard</a>
+                    </div>
+
+                    <div class="nav-item">
+                        <img src="images/graph-default.svg" width="19" height="18" alt="Analysis Icon">
+                        <a href="analysis.html" class="nav-link">Analysis</a>
+                    </div>
+
+                    <div class="nav-item">
+                        <img src="images/inbox-default.svg" width="15" height="15" alt="Inbox Icon">
+                        <a href="#" class="nav-link">Inbox</a>
+                    </div>
+
+                    <div class="nav-item">
+                        <img src="images/clock-default.svg" width="15" height="15" alt="History Icon">
+                        <a href="#" class="nav-link">History</a>
+                    </div>
+
+                    <div class="nav-item">
+                        <img src="images/user-default.svg" width="15" height="15" alt="Users Icon">
+                        <a href="#" class="nav-link">Users</a>
+                    </div>
+
+                    <div class="nav-item">
+                        <img src="images/maintenance-default.svg" width="13" height="18" alt="Maintenance Icon">
+                        <a href="#" class="nav-link">Maintenance</a>
+                    </div>
+
+                    <div class="nav-item">
+                        <img src="images/setting-default.svg" width="17" height="17" alt="Settings Icon">
+                        <a href="#" class="nav-link">Settings</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <div class="content-header">
+                    <h2>Dashboard</h2>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-container mb-4">
+                    <div class="row g-3">
+                        <div class="col-xl col-lg-6 col-md-6 col-sm-6">
+                            <div class="stat-card">
+                                <div class="stat-icon star">
+                                    <img src="images/star.svg" alt="New Products">
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number">23,456</div>
+                                    <div class="stat-label">New Products</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl col-lg-6 col-md-6 col-sm-6">
+                            <div class="stat-card">
+                                <div class="stat-icon product">
+                                    <img src="images/new-product.svg" alt="Added Products">
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number">2345</div>
+                                    <div class="stat-label">Added Products</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl col-lg-6 col-md-6 col-sm-6">
+                            <div class="stat-card">
+                                <div class="stat-icon total">
+                                    <img src="images/total-product.svg" alt="Total Products">
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number">32,456</div>
+                                    <div class="stat-label">Total Products</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl col-lg-6 col-md-6 col-sm-6">
+                            <div class="stat-card">
+                                <div class="stat-icon sales">
+                                    <img src="images/dollar-filled.svg" alt="Today's Sale">
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number">5678</div>
+                                    <div class="stat-label">Today's Sale</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl col-lg-6 col-md-6 col-sm-6">
+                            <div class="stat-card">
+                                <div class="stat-icon revenue">
+                                    <img src="images/money-bag.svg" alt="Total Sale">
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number">33.5342</div>
+                                    <div class="stat-label">Total Sale</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="charts-section mb-4">
+                    <div class="row g-4">
+                        <!-- Sales Chart -->
+                        <div class="col-lg-8">
+                            <div class="chart-card">
+                                <div class="chart-header">
+                                    <h5>Sale</h5>
+                                    <div class="chart-tabs">
+                                        <span class="chart-tab">Hours</span>
+                                        <span class="chart-tab">Weekly</span>
+                                        <span class="chart-tab active">Yearly</span>
+                                    </div>
+                                </div>
+                                <div class="chart-container">
+                                    <img src="images/data-graph.png" alt="Sales Chart" class="chart-image">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Sales by Country -->
+                        <div class="col-lg-4">
+                            <div class="chart-card">
+                                <div class="chart-header">
+                                    <h5>Sales by Country</h5>
+                                </div>
+                                <div class="pie-chart-container">
+                                    <img src="images/pie-chart.svg" alt="Pie Chart" class="pie-chart">
+                                    <div class="pie-chart-legend">
+                                        <div class="legend-item">
+                                            <span class="legend-color usa"></span>
+                                            <span class="legend-text">United States of America</span>
+                                        </div>
+                                        <div class="legend-item">
+                                            <span class="legend-color russia"></span>
+                                            <span class="legend-text">Russia</span>
+                                        </div>
+                                        <div class="legend-item">
+                                            <span class="legend-color canada"></span>
+                                            <span class="legend-text">Canada</span>
+                                        </div>
+                                        <div class="legend-item">
+                                            <span class="legend-color india"></span>
+                                            <span class="legend-text">India</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Invoices Table -->
+                <div class="invoices-section">
+                    <div class="table-card">
+                        <div class="table-header">
+                            <h5>Invoices</h5>
+                            <a href="#" class="view-all-link">View all</a>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table invoice-table">
+                                <thead>
+                                    <tr>
+                                        <th>INVOICE</th>
+                                        <th>COMPANY NAME</th>
+                                        <th>EMAIL</th>
+                                        <th>DUE DATE</th>
+                                        <th>STATUS</th>
+                                        <th>AMOUNT</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#41002</td>
+                                        <td>Public Adjusting Firm</td>
+                                        <td>georgia.young@example.com</td>
+                                        <td>24 May, 2020</td>
+                                        <td><span class="status-badge paid">Paid</span></td>
+                                        <td>$47,800</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#41003</td>
+                                        <td>Other</td>
+                                        <td>jessica.hanson@example.com</td>
+                                        <td>24 May, 2020</td>
+                                        <td><span class="status-badge paid">Paid</span></td>
+                                        <td>$98,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#41004</td>
+                                        <td>Vendor</td>
+                                        <td>alma.lawson@example.com</td>
+                                        <td>6 Sep, 2020</td>
+                                        <td><span class="status-badge paid">Paid</span></td>
+                                        <td>$85,900</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#41005</td>
+                                        <td>Property Management Company</td>
+                                        <td>kenzi.lawson@example.com</td>
+                                        <td>25 Oct, 2020</td>
+                                        <td><span class="status-badge paid">Paid</span></td>
+                                        <td>$10,570</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#41006</td>
+                                        <td>Subcontractor Company</td>
+                                        <td>jackson.graham@example.com</td>
+                                        <td>1 Feb, 2020</td>
+                                        <td><span class="status-badge failed">Failed</span></td>
+                                        <td>$10,200</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#41007</td>
+                                        <td>Mortgage Company</td>
+                                        <td>felicia.reid@example.com</td>
+                                        <td>22 Oct, 2020</td>
+                                        <td><span class="status-badge pending">Pending</span></td>
+                                        <td>$12,600</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#41008</td>
+                                        <td>TPA</td>
+                                        <td>dolores.chambers@example.com</td>
+                                        <td>21 Sep, 2020</td>
+                                        <td><span class="status-badge paid">Paid</span></td>
+                                        <td>$11,170</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#41009</td>
+                                        <td>Fire Department</td>
+                                        <td>nevaeh.simmons@example.com</td>
+                                        <td>17 Oct, 2020</td>
+                                        <td><span class="status-badge failed">Failed</span></td>
+                                        <td>$28,900</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#41010</td>
+                                        <td>Insurance Carrier</td>
+                                        <td>curtis.weaver@example.com</td>
+                                        <td>21 Sep, 2020</td>
+                                        <td><span class="status-badge paid">Paid</span></td>
+                                        <td>$10,900</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
