@@ -10,9 +10,6 @@
 </head>
 
 <body>
-    <!-- Mobile Overlay -->
-    <div class="mobile-overlay" id="mobileOverlay"></div>
-    
     <div class="main-container">
         <!-- Responsive Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 px-4 fixed-top shadow-sm">
@@ -38,11 +35,6 @@
 
                 <!-- Right side items -->
                 <div class="d-flex align-items-center gap-2 gap-md-4">
-                    <!-- Mobile Search Icon -->
-                    <button class="btn btn-link d-md-none p-0" id="mobileSearchToggle">
-                        <img src="./images/search-icon.svg" width="20" alt="search">
-                    </button>
-                    
                     <img src="./images/notification-icon.svg" width="22" alt="notification">
 
                     <div class="d-flex align-items-center gap-2">
@@ -53,26 +45,6 @@
                 </div>
             </div>
         </nav>
-
-        <!-- Mobile Search Bar -->
-        <div class="mobile-search-bar" id="mobileSearchBar">
-            <div class="container-fluid py-2">
-                <div class="input-group">
-                    <span class="input-group-text bg-transparent border-0">
-                        <img src="./images/search-icon.svg" width="16" alt="search">
-                    </span>
-                    <input type="text" class="form-control border-0" placeholder="Search...">
-                    <button class="btn btn-link" id="closeMobileSearch">
-                        <span>&times;</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-
-
-
-
 
         <div class="container-fluid d-flex flex-row bodyContainer">
             <!-- Sidebar -->
@@ -203,19 +175,21 @@
                             </legend>
                             <div class="row">
                                 <div class="col-lg-4 col-md-6">
-                                    <div class="mb-3">
-                                        <input type="text" id="focus" class="form-control" autofocus placeholder="Auto Focus">
+                                    <div class="floating-label">
+                                        <label for="focus" class="form-label three-column-label">Focus</label>
+                                        <input type="text" id="focus" class="form-control focus-field" autofocus placeholder="">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6">
-                                    <div class="mb-3">
-                                        <input type="password" class="form-control" id="PasswordSecret"
-                                            placeholder="Enter your password" value="Top secret">
+                                    <div class="floating-label">
+                                        <label for="PasswordSecret" class="form-label three-column-label">Password</label>
+                                        <input type="password" class="form-control" id="PasswordSecret" placeholder="" value="TopSecret">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6">
-                                    <div class="mb-3">
-                                        <input type="text" id="disabled" class="form-control" disabled placeholder="Disabled Field">
+                                    <div class="floating-label">
+                                        <label for="disabled" class="form-label three-column-label">Disabled</label>
+                                        <input type="text" id="disabled" class="form-control disabled-field" disabled placeholder="">
                                     </div>
                                 </div>
                             </div>
@@ -311,7 +285,7 @@
                             </div>
 
                             <!-- Snackbar Demo -->
-                            <div class="mb-4">
+                            <!-- <div class="mb-4">
                                 <span class="element-label">SnackBar</span>
                                 <div class="row mt-3">
                                     <div class="col-md-6">
@@ -322,6 +296,81 @@
                                         <button class="btn btn-warning me-2" onclick="showSnackbar('Warning! Please check your input.', 'warning')">Warning</button>
                                         <button class="btn btn-info" onclick="showSnackbar('Info! Here is some information.', 'info')">Info</button>
                                     </div>
+                                </div>
+                            </div> -->
+                        </fieldset>
+
+                        <!-- Snackbar Messages Section -->
+                        <fieldset class="form-section">
+                            <legend>
+                                <p id="snackbarSection">Snackbar</p>
+                            </legend>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <div class="snackbar-message error-message">
+                                        <span class="snackbar-icon">⚠</span>
+                                        <span>This is an error Message</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="snackbar-message info-message">
+                                        <span class="snackbar-icon">ℹ</span>
+                                        <span>This is an information message!</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <div class="snackbar-message warning-message">
+                                        <span class="snackbar-icon">⚡</span>
+                                        <span>This is a warning message!</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="snackbar-message success-message">
+                                        <span class="snackbar-icon">✓</span>
+                                        <span>This is a Success message!</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Call to Action Section -->
+                        <fieldset class="form-section">
+                            <legend>
+                                <p id="ctaSection">Call to action</p>
+                            </legend>
+                            <div class="cta-buttons">
+                                <button type="button" class="btn btn-primary btn-cta">Primary</button>
+                                <button type="button" class="btn btn-outline-primary btn-cta-secondary">Secondary</button>
+                            </div>
+                        </fieldset>
+
+                        <!-- Tabs Section -->
+                        <fieldset class="form-section">
+                            <legend>
+                                <p id="tabsSection">Tabs</p>
+                            </legend>
+                            <ul class="nav nav-tabs mb-3" id="myTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="tab1" aria-selected="true">Tab 1</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-controls="tab2" aria-selected="false">Tab 2</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab" aria-controls="tab3" aria-selected="false">Tab 3</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing</p>
+                                </div>
+                                <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+                                    <p>Tab 2 content goes here. You can add any content you want in this tab.</p>
+                                </div>
+                                <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+                                    <p>Tab 3 content goes here. You can add any content you want in this tab.</p>
                                 </div>
                             </div>
                         </fieldset>

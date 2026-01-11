@@ -1,6 +1,3 @@
-// ============================================
-//   CONSOLIDATED JAVASCRIPT FILE
-// ============================================
 
 // Login Form Handler
 function handleLogin(event) {
@@ -9,10 +6,9 @@ function handleLogin(event) {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     
-    // Simple validation - you can customize these credentials
+    // Simple validation 
     if (username && password) {
-        // For demo purposes, accept any non-empty username and password
-        // You can add specific validation here if needed
+       
         window.location.href = 'dashboard.html';
     } else {
         alert('Please enter both username and password');
@@ -34,7 +30,7 @@ function showSnackbar(message, type) {
     }
 }
 
-// Initialize all functionality when DOM is loaded
+
 document.addEventListener('DOMContentLoaded', function() {
     
     // ============================================
@@ -46,20 +42,17 @@ document.addEventListener('DOMContentLoaded', function() {
         loginForm.addEventListener('submit', handleLogin);
     }
     
-    // ============================================
-    // MOBILE SIDEBAR FUNCTIONALITY
-    // ============================================
+    
+    // Mobile sidebar functionality
     
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('mobileOverlay');
     const sidebarClose = document.getElementById('sidebarClose');
 
-    if (mobileMenuToggle && sidebar && overlay) {
+    if (mobileMenuToggle && sidebar) {
         // Mobile menu toggle
         mobileMenuToggle.addEventListener('click', function() {
             sidebar.classList.add('show');
-            overlay.classList.add('show');
             document.body.classList.add('sidebar-open');
         });
 
@@ -67,11 +60,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (sidebarClose) {
             sidebarClose.addEventListener('click', closeSidebar);
         }
-        overlay.addEventListener('click', closeSidebar);
 
         function closeSidebar() {
             sidebar.classList.remove('show');
-            overlay.classList.remove('show');
             document.body.classList.remove('sidebar-open');
         }
 
@@ -81,31 +72,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 closeSidebar();
             }
         });
-    }
-
-    // ============================================
-    // MOBILE SEARCH FUNCTIONALITY
-    // ============================================
-    
-    const mobileSearchToggle = document.getElementById('mobileSearchToggle');
-    const mobileSearchBar = document.getElementById('mobileSearchBar');
-    const closeMobileSearch = document.getElementById('closeMobileSearch');
-
-    if (mobileSearchToggle && mobileSearchBar) {
-        mobileSearchToggle.addEventListener('click', function() {
-            mobileSearchBar.classList.add('show');
+        
+        // Close sidebar when clicking on a nav link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                closeSidebar();
+            });
         });
     }
 
-    if (closeMobileSearch && mobileSearchBar) {
-        closeMobileSearch.addEventListener('click', function() {
-            mobileSearchBar.classList.remove('show');
-        });
-    }
+    //Mobile search bar functionality is removed - cleaner design
 
-    // ============================================
-    // FILE UPLOAD FUNCTIONALITY
-    // ============================================
+    // file upload functionality
     
     const uploadButton = document.getElementById('uploadButton');
     const fileUpload = document.getElementById('fileUpload');
@@ -122,9 +100,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ============================================
-    // FLOATING LABEL FUNCTIONALITY
-    // ============================================
+   
+    // Floating label functionality
+  
     
     document.querySelectorAll('.floating-label input').forEach(input => {
         input.addEventListener('focus', function() {
@@ -143,9 +121,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // ============================================
-    // SNACKBAR FUNCTIONALITY
-    // ============================================
+
+    // Snackbar functionality
+  
     
     const snackbarClose = document.getElementById('snackbarClose');
     if (snackbarClose) {
@@ -157,9 +135,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ============================================
-    // FORM VALIDATION
-    // ============================================
+   
+    // Form Validation
+  
     
     const forms = document.querySelectorAll('form');
     
@@ -173,9 +151,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ============================================
-    // NAVIGATION FUNCTIONALITY
-    // ============================================
+    
+    // Navigation functionality
+   
     
     const navLinks = document.querySelectorAll('.nav-link');
     
@@ -191,11 +169,9 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Close mobile sidebar when navigation link is clicked
             const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('mobileOverlay');
             
             if (sidebar && sidebar.classList.contains('show')) {
                 sidebar.classList.remove('show');
-                overlay.classList.remove('show');
                 document.body.classList.remove('sidebar-open');
             }
             
@@ -207,9 +183,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ============================================
-    // MOBILE NAVIGATION HELPER
-    // ============================================
+    
+    // Mobile navigation bar functionality
+
     
     const navItems = document.querySelectorAll('.nav-item');
     
@@ -230,28 +206,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ============================================
-    // KEYBOARD NAVIGATION
-    // ============================================
+    
+    // Keyboard navigation
+   
     
     document.addEventListener('keydown', function(e) {
         // Close sidebar with Escape key
         if (e.key === 'Escape') {
             const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('mobileOverlay');
             
             if (sidebar && sidebar.classList.contains('show')) {
                 sidebar.classList.remove('show');
-                overlay.classList.remove('show');
                 document.body.classList.remove('sidebar-open');
             }
         }
     });
 });
 
-// ============================================
-// UTILITY FUNCTIONS
-// ============================================
+
+// Utility function
+
 
 function validateField(field) {
     const value = field.value.trim();
